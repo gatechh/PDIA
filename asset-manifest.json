@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/PDIA/static/css/main.f855e6bc.css",
-    "main.js": "/PDIA/static/js/main.b5ff1bad.js",
+    "main.css": "/PDIA/static/css/main.e6c13ad2.css",
+    "main.js": "/PDIA/static/js/main.3e74f4cf.js",
     "static/js/453.754acc0d.chunk.js": "/PDIA/static/js/453.754acc0d.chunk.js",
-    "static/media/logo.svg": "/PDIA/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/PDIA/index.html",
-    "main.f855e6bc.css.map": "/PDIA/static/css/main.f855e6bc.css.map",
-    "main.b5ff1bad.js.map": "/PDIA/static/js/main.b5ff1bad.js.map",
+    "main.e6c13ad2.css.map": "/PDIA/static/css/main.e6c13ad2.css.map",
+    "main.3e74f4cf.js.map": "/PDIA/static/js/main.3e74f4cf.js.map",
     "453.754acc0d.chunk.js.map": "/PDIA/static/js/453.754acc0d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.b5ff1bad.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3e74f4cf.js"
   ]
 }
