@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const mockFHIRData = {
   "patients": [
@@ -23,11 +24,11 @@ const mockFHIRData = {
 
 const fetchDrugInteractions = async (rxCUIs) => {
   if (rxCUIs.length < 2) return [];
-  const url = `https://rxnav.nlm.nih.gov/REST/interaction/list.json?rxcuis=${rxCUIs.join(",")}`;
+  const url = `https://biothings.ncats.io/ddinter/query?q=${rxCUIs.join(",")}&fields=interaction`;
   try {
     const response = await fetch(url);
     const data = await response.json();
-    return data.fullInteractionTypeGroup || [];
+    return data.hits || [];
   } catch (error) {
     console.error("Error fetching interactions:", error);
     return [];
@@ -62,62 +63,62 @@ const DrugInteractionApp = () => {
   };
 
   return (
-    <div className="p-6 max-w-xl mx-auto bg-white rounded-xl shadow-md space-y-4">
-      <h1 className="text-xl font-bold">Drug Interaction Checker</h1>
-      <input
-        type="text"
-        value={patientId}
-        onChange={handleInputChange}
-        placeholder="Enter Patient ID or Name"
-        className="border p-2 w-full rounded"
-      />
-      {filteredPatients.length > 0 && (
-        <ul className="border p-2 bg-gray-100 rounded">
-          {filteredPatients.map(p => (
-            <li
-              key={p.id}
-              onClick={() => {
-                setPatientId(p.id);
-                handleSearch(p.id);
-                setFilteredPatients([]);
-              }}
-              className="cursor-pointer p-1 hover:bg-gray-200"
-            >
-              {p.name} (ID: {p.id})
-            </li>
-          ))}
-        </ul>
-      )}
-      <button onClick={() => handleSearch(patientId)} className="bg-blue-500 text-white px-4 py-2 rounded">
-        Search
-      </button>
-
-      {patient && (
-        <div>
-          <h2 className="text-lg font-semibold mt-4">Patient: {patient.name}</h2>
-          <h3 className="text-md font-medium">Medications:</h3>
-          <ul>
-            {patient.medications.map(med => (
-              <li key={med.rxCUI}>{med.name} (RxCUI: {med.rxCUI})</li>
+    <div className="container mt-5">
+      <div className="card p-4 shadow-lg">
+        <h1 className="mb-4 text-center">Drug Interaction Checker</h1>
+        <input
+          type="text"
+          value={patientId}
+          onChange={handleInputChange}
+          placeholder="Enter Patient ID or Name"
+          className="form-control mb-2"
+        />
+        {filteredPatients.length > 0 && (
+          <ul className="list-group mb-2">
+            {filteredPatients.map(p => (
+              <li
+                key={p.id}
+                onClick={() => {
+                  setPatientId(p.id);
+                  handleSearch(p.id);
+                  setFilteredPatients([]);
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                {p.name} (ID: {p.id})
+              </li>
             ))}
           </ul>
+        )}
+        <button onClick={() => handleSearch(patientId)} className="btn btn-primary w-100">
+          Search
+        </button>
 
-          {interactions.length > 0 ? (
-            <div className="mt-4">
-              <h3 className="text-md font-medium">Potential Interactions:</h3>
-              {interactions.map((group, index) => (
-                <div key={index} className="bg-red-100 p-2 mt-2 rounded">
-                  {group.fullInteractionType.map((interaction, idx) => (
-                    <p key={idx}>{interaction.interactionPair[0].description}</p>
-                  ))}
-                </div>
+        {patient && (
+          <div className="mt-4">
+            <h2 className="text-center">Patient: {patient.name}</h2>
+            <h3 className="mt-3">Medications:</h3>
+            <ul className="list-group">
+              {patient.medications.map(med => (
+                <li key={med.rxCUI} className="list-group-item">{med.name} (RxCUI: {med.rxCUI})</li>
               ))}
-            </div>
-          ) : (
-            <p className="mt-4 text-gray-500">No interactions found.</p>
-          )}
-        </div>
-      )}
+            </ul>
+
+            {interactions.length > 0 ? (
+              <div className="mt-4">
+                <h3>Potential Interactions:</h3>
+                {interactions.map((interaction, index) => (
+                  <div key={index} className="alert alert-danger mt-2">
+                    <p>{interaction.interaction}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="mt-4 text-muted text-center">No interactions found.</p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   );
 };
