@@ -65,7 +65,7 @@ const DrugInteractionApp = () => {
   return (
     <div className="container mt-5">
       <div className="card p-4 shadow-lg">
-        <h1 className="mb-4 text-center">Drug Interaction Checker</h1>
+        <h1 className="mb-4 text-center">Potential Drug Interactions Analysis</h1>
         <input
           type="text"
           value={patientId}
