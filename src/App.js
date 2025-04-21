@@ -26,14 +26,59 @@ const mockFHIRData = {
         { "name": "Lepirudin", "rxCUI": "00001" },
         { "name": "Dasatinib", "rxCUI": "01254" }
       ]
+    },
+    {
+      "id": "P003",
+      "name": "Carlos Rivera",
+      "medications": [
+        { "name": "Acetaminophen", "drugbank_id": "DB00316" },
+        { "name": "Carbamazepine", "drugbank_id": "DB00564" }
+      ]
+    },
+    {
+      "id": "P004",
+      "name": "Maya Patel",
+      "medications": [
+        { "name": "Metformin", "drugbank_id": "DB00331" },
+        { "name": "Ciprofloxacin", "drugbank_id": "DB00537" }
+      ]
+    },
+    {
+      "id": "P005",
+      "name": "Liam Chen",
+      "medications": [
+        { "name": "Roflumilast", "drugbank_id": "DB01656" },
+        { "name": "Grapefruit", "drugbank_id": "DB10534" }
+      ]
+    },
+    {
+      "id": "P006",
+      "name": "Ava Nguyen",
+      "medications": [
+        { "name": "8-azaguanine", "drugbank_id": "DB01667" },
+        { "name": "Febuxostat", "drugbank_id": "DB04854" }
+      ]
+    },
+    {
+      "id": "P009",
+      "name": "Noah Thompson",
+      "medications": [
+        { "name": "Tranilast", "drugbank_id": "DB07615" },
+        { "name": "Obinutuzumab", "drugbank_id": "DB08935" }
+      ]
+    },
+    {
+      "id": "P010",
+      "name": "Zara Ahmed",
+      "medications": [
+        { "name": "Simendan", "drugbank_id": "DB12286" },
+        { "name": "Amoxapine", "drugbank_id": "DB00543" },
+      ]
     }
   ]
 };
 const fetchDrugInteractions = async (rxCUIs) => {
-  console.log('hhh: ', drugReactions)
-  console.log('hhh rxCUIs: ', rxCUIs)
   const drugInteractionFound = drugReactions.find(obj => obj.drug_name === rxCUIs[0] && obj.interacts_with === rxCUIs[1])
-  console.log('hhh drugInteractionFound: ', drugInteractionFound)
   if(drugInteractionFound){
     return [drugInteractionFound.description]
   }

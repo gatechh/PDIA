@@ -33,5 +33,48 @@
       "interacts_with": "Ursodeoxycholic acid",
       "interacts_with_id": "DB01586",
       "description": "The risk or severity of bleeding and bruising can be increased when Lepirudin is combined with Ursodeoxycholic acid."
+    },
+    {
+      "drugbank_id": "DB00316",
+      "drug_name": "Acetaminophen",
+      "interacts_with": "Carbamazepine",
+      "interacts_with_id": "DB00564",
+      "description": "The metabolism of Carbamazepine can be increased when combined with Acetaminophen."
+    },
+    {
+      "drugbank_id": "DB00331",
+      "drug_name": "Metformin",
+      "interacts_with": "Ciprofloxacin",
+      "interacts_with_id": "DB00537",
+      "description": "The therapeutic efficacy of Metformin can be increased when used in combination with Ciprofloxacin."
+    },
+    {
+      "drugbank_id": "DB01667",
+      "drug_name": "8-azaguanine",
+      "interacts_with": "Febuxostat",
+      "interacts_with_id": "DB04854",
+      "description": "The serum concentration of the active metabolites of 8-azaguanine can be increased when 8-azaguanine is used in combination with Febuxostat."
+    },
+    {
+      "drugbank_id": "DB01656",
+      "drug_name": "Roflumilast",
+      "interacts_with": "Grapefruit",
+      "interacts_with_id": "DB10534",
+      "description": "The metabolism of Roflumilast can be decreased when combined with Grapefruit."
+    },
+    {
+      "drugbank_id": "DB07615",
+      "drug_name": "Tranilast",
+      "interacts_with": "Obinutuzumab",
+      "interacts_with_id": "DB08935",
+      "description": "The risk or severity of adverse effects can be increased when Tranilast is combined with Obinutuzumab."
+    },
+    {
+      "drugbank_id": "DB12286",
+      "drug_name": "Simendan",
+      "interacts_with": "Amoxapine",
+      "interacts_with_id": "DB00543",
+      "description": "The risk or severity of QTc prolongation can be increased when Amoxapine is combined with Simendan."
     }
+
 ]
