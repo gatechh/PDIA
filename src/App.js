@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import drugReactions from "./drug_reactions.json"
 const mockFHIRData = {
   "patients": [
     {
@@ -18,21 +18,37 @@ const mockFHIRData = {
         { "name": "Aspirin", "rxCUI": "1191" },
         { "name": "Lisinopril", "rxCUI": "29046" }
       ]
+    },
+    {
+      "id": "67891",
+      "name": "Armond W Lotus",
+      "medications": [
+        { "name": "Lepirudin", "rxCUI": "00001" },
+        { "name": "Dasatinib", "rxCUI": "01254" }
+      ]
     }
   ]
 };
-
 const fetchDrugInteractions = async (rxCUIs) => {
-  if (rxCUIs.length < 2) return [];
-  const url = `https://biothings.ncats.io/ddinter/query?q=${rxCUIs.join(",")}&fields=interaction`;
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.hits || [];
-  } catch (error) {
-    console.error("Error fetching interactions:", error);
-    return [];
+  console.log('hhh: ', drugReactions)
+  console.log('hhh rxCUIs: ', rxCUIs)
+  const drugInteractionFound = drugReactions.find(obj => obj.drug_name === rxCUIs[0] && obj.interacts_with === rxCUIs[1])
+  console.log('hhh drugInteractionFound: ', drugInteractionFound)
+  if(drugInteractionFound){
+    return [drugInteractionFound.description]
   }
+
+  // if (rxCUIs.length < 2) return [];
+  // const url = `https://biothings.ncats.io/ddinter/query?q=${rxCUIs.join(",")}&fields=interaction`;
+  // try {
+  //   const response = await fetch(url);
+  //   const data = await response.json();
+  //   return data.hits || [];
+  // } catch (error) {
+  //   console.error("Error fetching interactions:", error);
+  //   return [];
+  // }
+  return []
 };
 
 const DrugInteractionApp = () => {
@@ -50,7 +66,8 @@ const DrugInteractionApp = () => {
   useEffect(() => {
     if (patient && patient.medications.length > 1) {
       const rxCUIs = patient.medications.map(med => med.rxCUI);
-      fetchDrugInteractions(rxCUIs).then(setInteractions);
+      const rxDrugs = patient.medications.map(med => med.name)
+      fetchDrugInteractions(rxDrugs).then(setInteractions);
     }
   }, [patient]);
 
@@ -108,13 +125,19 @@ const DrugInteractionApp = () => {
               <div className="mt-4">
                 <h3>Potential Interactions:</h3>
                 {interactions.map((interaction, index) => (
+                interaction.indexOf("severity") > -1 ? 
                   <div key={index} className="alert alert-danger mt-2">
-                    <p>{interaction.interaction}</p>
+                    <p>{interaction}</p>
+                  </div> : 
+                  <div key={index} className="alert alert-warning mt-2">
+                    <p>{interaction}</p>
                   </div>
                 ))}
               </div>
             ) : (
-              <p className="mt-4 text-muted text-center">No interactions found.</p>
+              <div className="alert alert-light mt-2">
+                <p className="mt-4 text-muted text-center">No interactions found.</p>
+              </div>
             )}
           </div>
         )}

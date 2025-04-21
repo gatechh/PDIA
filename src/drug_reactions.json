@@ -1,0 +1,37 @@
+[
+    {
+      "drugbank_id": "DB00001",
+      "drug_name": "Lepirudin",
+      "interacts_with": "Apixaban",
+      "interacts_with_id": "DB06605",
+      "description": "Apixaban may increase the anticoagulant activities of Lepirudin."
+    },
+    {
+      "drugbank_id": "DB00001",
+      "drug_name": "Lepirudin",
+      "interacts_with": "Dabigatran etexilate",
+      "interacts_with_id": "DB06695",
+      "description": "Dabigatran etexilate may increase the anticoagulant activities of Lepirudin."
+    },
+    {
+      "drugbank_id": "DB00001",
+      "drug_name": "Lepirudin",
+      "interacts_with": "Dasatinib",
+      "interacts_with_id": "DB01254",
+      "description": "The risk or severity of bleeding and hemorrhage can be increased when Dasatinib is combined with Lepirudin."
+    },
+    {
+      "drugbank_id": "DB00001",
+      "drug_name": "Lepirudin",
+      "interacts_with": "Deferasirox",
+      "interacts_with_id": "DB01609",
+      "description": "The risk or severity of gastrointestinal bleeding can be increased when Lepirudin is combined with Deferasirox."
+    },
+    {
+      "drugbank_id": "DB00001",
+      "drug_name": "Lepirudin",
+      "interacts_with": "Ursodeoxycholic acid",
+      "interacts_with_id": "DB01586",
+      "description": "The risk or severity of bleeding and bruising can be increased when Lepirudin is combined with Ursodeoxycholic acid."
+    }
+]
