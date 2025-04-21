@@ -1,6 +1,12 @@
-# Getting Started with Create React App
+# Potential Drug Interaction Analysis (PDIA)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Many patients tend to take multiple medications. More often than not, those drugs can interact in harmful ways. The job of doctors and pharmacists is to catch these issues but more often than not, those warnings are ignored and overridden. The research shows that Clinicians override those warnings 49% to 96% of the time (Bryant 2014). This project aims to create the Potential Drug Interaction Analysis tool for patients to simply check the drug interactions and bring it up to their physicians. 
+
+
+# View live App here 
+
+[https://gatechh.github.io/PDIA/](https://gatechh.github.io/PDIA/)
+
 
 ## Available Scripts
 
