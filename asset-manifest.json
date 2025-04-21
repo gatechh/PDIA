@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/PDIA/static/css/main.79d19d76.css",
-    "main.js": "/PDIA/static/js/main.ec23ca4c.js",
+    "main.js": "/PDIA/static/js/main.72ca6a45.js",
     "static/js/453.754acc0d.chunk.js": "/PDIA/static/js/453.754acc0d.chunk.js",
     "index.html": "/PDIA/index.html",
     "main.79d19d76.css.map": "/PDIA/static/css/main.79d19d76.css.map",
-    "main.ec23ca4c.js.map": "/PDIA/static/js/main.ec23ca4c.js.map",
+    "main.72ca6a45.js.map": "/PDIA/static/js/main.72ca6a45.js.map",
     "453.754acc0d.chunk.js.map": "/PDIA/static/js/453.754acc0d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.79d19d76.css",
-    "static/js/main.ec23ca4c.js"
+    "static/js/main.72ca6a45.js"
   ]
 }
