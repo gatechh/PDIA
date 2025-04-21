@@ -31,48 +31,48 @@ const mockFHIRData = {
       "id": "P003",
       "name": "Carlos Rivera",
       "medications": [
-        { "name": "Acetaminophen", "drugbank_id": "DB00316" },
-        { "name": "Carbamazepine", "drugbank_id": "DB00564" }
+        { "name": "Acetaminophen", "rxCUI": "DB00316" },
+        { "name": "Carbamazepine", "rxCUI": "DB00564" }
       ]
     },
     {
       "id": "P004",
       "name": "Maya Patel",
       "medications": [
-        { "name": "Metformin", "drugbank_id": "DB00331" },
-        { "name": "Ciprofloxacin", "drugbank_id": "DB00537" }
+        { "name": "Metformin", "rxCUI": "DB00331" },
+        { "name": "Ciprofloxacin", "rxCUI": "DB00537" }
       ]
     },
     {
       "id": "P005",
       "name": "Liam Chen",
       "medications": [
-        { "name": "Roflumilast", "drugbank_id": "DB01656" },
-        { "name": "Grapefruit", "drugbank_id": "DB10534" }
+        { "name": "Roflumilast", "rxCUI": "DB01656" },
+        { "name": "Grapefruit", "rxCUI": "DB10534" }
       ]
     },
     {
       "id": "P006",
       "name": "Ava Nguyen",
       "medications": [
-        { "name": "8-azaguanine", "drugbank_id": "DB01667" },
-        { "name": "Febuxostat", "drugbank_id": "DB04854" }
+        { "name": "8-azaguanine", "rxCUI": "DB01667" },
+        { "name": "Febuxostat", "rxCUI": "DB04854" }
       ]
     },
     {
       "id": "P009",
       "name": "Noah Thompson",
       "medications": [
-        { "name": "Tranilast", "drugbank_id": "DB07615" },
-        { "name": "Obinutuzumab", "drugbank_id": "DB08935" }
+        { "name": "Tranilast", "rxCUI": "DB07615" },
+        { "name": "Obinutuzumab", "rxCUI": "DB08935" }
       ]
     },
     {
       "id": "P010",
       "name": "Zara Ahmed",
       "medications": [
-        { "name": "Simendan", "drugbank_id": "DB12286" },
-        { "name": "Amoxapine", "drugbank_id": "DB00543" },
+        { "name": "Simendan", "rxCUI": "DB12286" },
+        { "name": "Amoxapine", "rxCUI": "DB00543" },
       ]
     }
   ]
